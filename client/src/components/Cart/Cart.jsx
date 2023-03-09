@@ -3,7 +3,7 @@ import "./Cart.scss";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 
 const Cart = () => {
-  const data = [{}];
+ const data = [{}];
 
   return (
     <div className="cart">
@@ -16,7 +16,7 @@ const Cart = () => {
             <p>{item.desc?.substring(0, 100)}</p>
             <div className="price">1 x ${item.price}</div>
           </div>
-          <DeleteOutlinedIcon className="delete"/>
+          <DeleteOutlinedIcon className="delete" />
         </div>
       ))}
       <div className="total">
