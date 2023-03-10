@@ -2,20 +2,20 @@ import { useEffect, useState } from "react";
 import { makeRequest } from "../../makeRequest";
 
 const useFetch = (url) => {
-  const [data, setdata] = useState([]);
-  const [loading, setloading] = useState(false);
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setloading(true);
+        setLoading(true);
         const res = await makeRequest.get(url);
-        setdata(res.data.data);
+        setData(res.data.data);
       } catch (err) {
         setError(true);
       }
-      setloading(false);
+      setLoading(false);
     };
     fetchData();
   }, [url]);
